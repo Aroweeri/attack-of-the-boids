@@ -11,7 +11,13 @@ config_version=4
 [application]
 
 config/name="Attack Of The Boids"
+run/main_scene="res://Level1.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="boid"
+2d_physics/layer_2="wall"
 
 [physics]
 
@@ -19,5 +25,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES3"
 environment/default_environment="res://default_env.tres"
