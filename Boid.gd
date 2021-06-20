@@ -5,6 +5,7 @@ var alignForce = 0.05;
 var separationForce = 2.8;
 var avoidCollisionForce = 380;
 var speed = 250
+var playerAttackForce = 50;
 
 var velocity;
 var rng = RandomNumberGenerator.new();
@@ -68,6 +69,21 @@ func align(delta):
 	velocity += (avg - velocity) * alignForce * delta;
 	velocity = velocity.normalized();
 	velocity *= speed;
+
+func attack(delta):
+	var bodies = $Area2D.get_overlapping_bodies();
+	var player = null;
+	if(bodies.size() < 2):
+		return
+	for body in bodies:
+		if body.is_in_group("players"):
+			player = body;
+			break;
+	if(player):
+		velocity += (player.position - position) * playerAttackForce * delta;
+		velocity = velocity.normalized();
+		velocity *= speed;
+	
 	
 func _process(delta):
 	rotation = velocity.angle()
@@ -78,4 +94,5 @@ func _physics_process(delta):
 	separation(delta);
 	align(delta);
 	avoid_collision(delta);
+	attack(delta);
 	move_and_slide(velocity)
