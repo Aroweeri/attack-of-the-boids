@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -226,6 +227,9 @@ value = 250.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 121.626, 263.067 )
 
 [connection signal="value_changed" from="GridContainer/cohesion" to="." method="_on_cohesion_value_changed"]
 [connection signal="value_changed" from="GridContainer/align" to="." method="_on_align_value_changed"]
