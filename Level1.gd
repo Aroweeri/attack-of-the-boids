@@ -6,23 +6,23 @@ var rng = RandomNumberGenerator.new();
 var boids = [];
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	rng.randomize();
-	for _i in range(numBoids):
-		var instance = boidScene.instance();
-		instance.position = $top_left.position;
-		instance.rotation = rng.randi_range(0,355);
-		boids.append(instance);
-		add_child(instance);
+#func _ready():
+#	rng.randomize();
+#	for _i in range(numBoids):
+#		var instance = boidScene.instance();
+#		instance.position = $top_left.position;
+#		instance.rotation = rng.randi_range(0,355);
+#		boids.append(instance);
+#		add_child(instance);
 		
-func _input(_event):
-	if(Input.is_action_just_pressed("ui_accept")):
-		for _i in range(0,10):
-			var instance = boidScene.instance();
-			instance.position = $top_left.position;
-			instance.rotation = rng.randi_range(0,355);
-			boids.append(instance);
-			add_child(instance);
+#func _input(_event):
+#	if(Input.is_action_just_pressed("ui_accept")):
+#		for _i in range(0,10):
+#			var instance = boidScene.instance();
+#			instance.position = $top_left.position;
+#			instance.rotation = rng.randi_range(0,355);
+#			boids.append(instance);
+#			add_child(instance);
 
 
 func _on_cohesion_value_changed(value):
