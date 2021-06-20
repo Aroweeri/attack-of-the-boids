@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://tiles.png" type="Texture" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Level1.gd" type="Script" id=3]
-[ext_resource path="res://ui.tscn" type="PackedScene" id=4]
-[ext_resource path="res://light_texture.png" type="Texture" id=6]
+[ext_resource path="res://textures/tiles.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Level1.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Boid.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/light_texture.png" type="Texture" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -161,3 +162,6 @@ shadow_gradient_length = 5.2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
+
+[node name="Boid" parent="." instance=ExtResource( 5 )]
+position = Vector2( 283, 423 )

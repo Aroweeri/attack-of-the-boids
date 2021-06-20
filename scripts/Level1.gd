@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var boidScene = preload("res://Boid.tscn");
+onready var boidScene = preload("res://scenes/Boid.tscn");
 var numBoids = 50;
 var rng = RandomNumberGenerator.new();
 var boids = [];
