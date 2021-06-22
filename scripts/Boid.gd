@@ -83,12 +83,7 @@ func attack(delta):
 		velocity += (player.position - position) * playerAttackForce * delta;
 		velocity = velocity.normalized();
 		velocity *= speed;
-	
-	
-func _process(delta):
-	rotation = velocity.angle()
-	pass
-	
+
 func _physics_process(delta):
 	cohesion(delta);
 	separation(delta);
@@ -96,3 +91,4 @@ func _physics_process(delta):
 	avoid_collision(delta);
 	attack(delta);
 	move_and_slide(velocity)
+	rotation = velocity.angle()

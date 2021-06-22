@@ -1,19 +1,30 @@
 extends Node2D
 
 onready var boidScene = preload("res://scenes/Boid.tscn");
-var numBoids = 50;
+var numBoids = 10;
 var rng = RandomNumberGenerator.new();
 var boids = [];
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	rng.randomize();
-#	for _i in range(numBoids):
-#		var instance = boidScene.instance();
-#		instance.position = $top_left.position;
-#		instance.rotation = rng.randi_range(0,355);
-#		boids.append(instance);
-#		add_child(instance);
+#Called when the node enters the scene tree for the first time.
+func _ready():
+	rng.randomize();
+	var angle;
+	var radius;
+	var x;
+	var y;
+	for _i in range(numBoids):
+		var instance = boidScene.instance();
+		
+		#Get random positions in circle around spawn area
+		angle = rng.randf() * 2 * PI;
+		radius = 4 * sqrt(rng.randf());
+		x = radius * cos(angle) + $spawn.position.x;
+		y = radius * sin(angle) + $spawn.position.y;
+		
+		instance.position = Vector2(x,y);
+		instance.rotation = rng.randi_range(0,355);
+		boids.append(instance);
+		add_child(instance);
 		
 #func _input(_event):
 #	if(Input.is_action_just_pressed("ui_accept")):
