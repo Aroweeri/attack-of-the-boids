@@ -47,6 +47,7 @@ up={
 2d_physics/layer_1="boid"
 2d_physics/layer_2="wall"
 2d_physics/layer_3="player"
+2d_physics/layer_4="door"
 
 [physics]
 

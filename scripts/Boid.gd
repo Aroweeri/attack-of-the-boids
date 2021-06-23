@@ -5,7 +5,7 @@ var alignForce = 0.05;
 var separationForce = 2.8;
 var avoidCollisionForce = 380;
 var speed = 250
-var playerAttackForce = 50;
+var playerAttackForce = 300;
 
 var velocity;
 var rng = RandomNumberGenerator.new();
@@ -80,6 +80,8 @@ func attack(delta):
 			player = body;
 			break;
 	if(player):
+		if player.is_hidden():
+			return;
 		velocity += (player.position - position) * playerAttackForce * delta;
 		velocity = velocity.normalized();
 		velocity *= speed;

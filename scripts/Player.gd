@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 200
 
 var velocity = Vector2()
+var hidden = true;
 
 func get_input():
 	velocity = Vector2()
@@ -19,3 +20,9 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	
+func set_hidden(hidden):
+	self.hidden = hidden;
+	
+func is_hidden():
+	return self.hidden;
