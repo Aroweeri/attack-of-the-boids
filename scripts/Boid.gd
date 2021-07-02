@@ -4,7 +4,7 @@ var cohesionForce = 0.5;
 var alignForce = 0.05;
 var separationForce = 2.8;
 var avoidCollisionForce = 380;
-var speed = 250
+var speed = 100
 var playerAttackForce = 300;
 
 var velocity;
