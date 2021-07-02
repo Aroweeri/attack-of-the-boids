@@ -107,45 +107,31 @@ extents = Vector2( 51.756, 31.8161 )
 [node name="Level1" type="YSort"]
 script = ExtResource( 3 )
 
-[node name="Boid" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
-position = Vector2( 494.269, 396.218 )
+[node name="Boid" parent="." instance=ExtResource( 5 )]
+position = Vector2( 616, 400 )
 rotation = 1.57079
 
-[node name="Boid2" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
-position = Vector2( 511.125, 396.218 )
+[node name="Boid2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 264, 296 )
 rotation = 1.57079
 
-[node name="Boid3" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
-position = Vector2( 475.54, 397.342 )
+[node name="Boid3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 296, 304 )
 rotation = 1.57079
 
-[node name="Boid4" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
-position = Vector2( 482.657, 379.362 )
+[node name="Boid4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 608, 600 )
 rotation = 1.57079
 
-[node name="Boid5" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
-position = Vector2( 504.757, 378.239 )
+[node name="Boid5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 608, 560 )
 rotation = 1.57079
 
-[node name="Boid6" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
+[node name="Boid6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 501.386, 414.198 )
 rotation = 1.57079
 
-[node name="Boid7" parent="." groups=[
-"boids",
-] instance=ExtResource( 5 )]
+[node name="Boid7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 483.406, 412.7 )
 rotation = 1.57079
 
