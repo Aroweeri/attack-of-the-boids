@@ -12,30 +12,10 @@ func _ready():
 	var radius;
 	var x;
 	var y;
-	for _i in range(numBoids):
-		var instance = boidScene.instance();
-		
-		#Get random positions in circle around spawn area
-		angle = rng.randf() * 2 * PI;
-		radius = 4 * sqrt(rng.randf());
-		x = radius * cos(angle) + $spawn.position.x;
-		y = radius * sin(angle) + $spawn.position.y;
-		
-		instance.position = Vector2(x,y);
-		instance.rotation = rng.randi_range(0,355);
-		boids.append(instance);
-		add_child(instance);
-		
-#func _input(_event):
-#	if(Input.is_action_just_pressed("ui_accept")):
-#		for _i in range(0,10):
-#			var instance = boidScene.instance();
-#			instance.position = $top_left.position;
-#			instance.rotation = rng.randi_range(0,355);
-#			boids.append(instance);
-#			add_child(instance);
-
-
+	
+	for boid in get_tree().get_nodes_in_group("boids"):
+		boid.connect("playerkilled", self, "playerKilled");
+	
 func _on_cohesion_value_changed(value):
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.cohesionForce = value;
@@ -81,3 +61,6 @@ func _on_Area2D_body_exited(body):
 	$CanvasLayer/GridContainer/hidden.text = "EXPOSED";
 	if(body == $Player):
 		$Player.set_hidden(false);
+		
+func playerKilled():
+	get_tree().reload_current_scene();
