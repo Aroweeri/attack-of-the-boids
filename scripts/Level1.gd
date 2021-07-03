@@ -51,7 +51,6 @@ func _on_speed_value_changed(value):
 		boid.speed = value;
 	get_node("CanvasLayer/GridContainer/speed_label").text = "speed " + str(value);
 
-
 func _on_Area2D_body_entered(body):
 	$CanvasLayer/GridContainer/hidden.text = "HIDDEN";
 	if(body == $Player):
@@ -64,3 +63,7 @@ func _on_Area2D_body_exited(body):
 		
 func playerKilled():
 	get_tree().reload_current_scene();
+
+func _on_WinArea_body_entered(body):
+	if(body == $Player):
+		get_tree().reload_current_scene();
