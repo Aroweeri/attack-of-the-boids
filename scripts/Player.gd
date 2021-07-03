@@ -17,12 +17,15 @@ func get_input():
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed;
 
+
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
-	
+
+
 func set_hidden(hidden):
 	self.hidden = hidden;
-	
+
+
 func is_hidden():
 	return self.hidden;

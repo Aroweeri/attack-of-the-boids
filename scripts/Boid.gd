@@ -20,6 +20,7 @@ func _ready():
 	velocity = Vector2(rng.randf_range(-1,1)*speed, rng.randf_range(-1,1)*speed);
 	player = get_tree().get_nodes_in_group("players")[0];
 
+
 func cohesion(delta):
 	var bodies = $Area2D.get_overlapping_bodies();
 	if(bodies.size() < 2):
@@ -35,6 +36,7 @@ func cohesion(delta):
 	velocity = velocity.normalized();
 	velocity *= speed;
 	
+	
 func separation(delta):
 	var bodies = $Area2D.get_overlapping_bodies();
 	if(bodies.size() < 2):
@@ -49,6 +51,7 @@ func separation(delta):
 	velocity = velocity.normalized();
 	velocity *= speed;
 
+
 func avoid_collision(delta):
 	var distanceToCollision;
 	velocity = velocity.normalized();
@@ -60,7 +63,8 @@ func avoid_collision(delta):
 		velocity += velocity.rotated(-$RayCastPort.rotation) * delta * avoidCollisionForce * 1/distanceToCollision;
 	velocity = velocity.normalized();
 	velocity *= speed;
-		
+
+
 func align(delta):
 	var bodies = $Area2D.get_overlapping_bodies();
 	if(bodies.size() < 2):
@@ -76,6 +80,7 @@ func align(delta):
 	velocity = velocity.normalized();
 	velocity *= speed;
 
+
 func attack(delta):
 	var bodies = $playerDetectionArea.get_overlapping_bodies();
 	if(bodies.size() == 1):
@@ -90,10 +95,11 @@ func attack(delta):
 		velocity = velocity.normalized();
 		velocity *= attackSpeed;
 
+
 func _physics_process(delta):
-	
+
 	spaceState = get_world_2d().direct_space_state
-	
+
 	cohesion(delta);
 	separation(delta);
 	align(delta);
@@ -102,5 +108,5 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if(position.distance_to(player.position)<10):
 		emit_signal("playerkilled");
-	
+
 	rotation = velocity.angle()
