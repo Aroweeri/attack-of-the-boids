@@ -57,12 +57,14 @@ func _on_Area2D_body_entered(body):
 	$CanvasLayer/GridContainer/hidden.text = "HIDDEN";
 	if(body == $Player):
 		$Player.set_hidden(true);
+		$CanvasLayer/Vignette.modulate.a8 = 255;
 
 
 func _on_Area2D_body_exited(body):
 	$CanvasLayer/GridContainer/hidden.text = "EXPOSED";
 	if(body == $Player):
 		$Player.set_hidden(false);
+		$CanvasLayer/Vignette.modulate.a = 0;
 
 
 func playerKilled():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://textures/tiles.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Boid.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/light.png" type="Texture" id=6]
+[ext_resource path="res://textures/vignette.png" type="Texture" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -399,6 +400,12 @@ margin_top = 135.0
 margin_right = 112.0
 margin_bottom = 149.0
 text = "hdor"
+
+[node name="Vignette" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 0.137255, 0.423529, 0.0862745, 1 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.6, 0.682 )
+texture = ExtResource( 7 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 296, 280 )
