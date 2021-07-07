@@ -58,6 +58,8 @@ func _on_Area2D_body_entered(body):
 	if(body == $Player):
 		$Player.set_hidden(true);
 		$CanvasLayer/Vignette.modulate.a8 = 255;
+		for boid in get_tree().get_nodes_in_group("boids"):
+			boid.get_node("BreatheSound").volume_db = -25;
 
 
 func _on_Area2D_body_exited(body):
@@ -65,12 +67,22 @@ func _on_Area2D_body_exited(body):
 	if(body == $Player):
 		$Player.set_hidden(false);
 		$CanvasLayer/Vignette.modulate.a = 0;
+		for boid in get_tree().get_nodes_in_group("boids"):
+			boid.get_node("BreatheSound").volume_db = -10;
 
 
 func playerKilled():
-	get_tree().reload_current_scene();
-
+	$DeathSound.play();
+	$RestartTimer.start();
+	$CanvasLayer/ColorRect.visible = true;
+	for boid in get_tree().get_nodes_in_group("boids"):
+		boid.queue_free();
+	
 
 func _on_WinArea_body_entered(body):
 	if(body == $Player):
 		get_tree().reload_current_scene();
+
+
+func _on_RestartTimer_timeout():
+	get_tree().reload_current_scene();

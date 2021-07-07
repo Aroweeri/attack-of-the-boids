@@ -7,7 +7,7 @@ var alignForce = 0.05;
 var separationForce = 2.8;
 var avoidCollisionForce = 380;
 var speed = 100
-var attackSpeed = 250;
+var attackSpeed = 210;
 var playerAttackForce = 300;
 var player;
 var spaceState;
@@ -19,6 +19,7 @@ func _ready():
 	rng.randomize();
 	velocity = Vector2(rng.randf_range(-1,1)*speed, rng.randf_range(-1,1)*speed);
 	player = get_tree().get_nodes_in_group("players")[0];
+	$BreatheSound.play();
 
 
 func cohesion(delta):
@@ -85,12 +86,18 @@ func attack(delta):
 	var bodies = $playerDetectionArea.get_overlapping_bodies();
 	if(bodies.size() == 1):
 		if player.is_hidden():
+			$RunningSound.stop();
 			return;
 		var raycast = spaceState.intersect_ray(position, player.position, [self], 0b00000000000000001110);
 		if(!raycast):
+			$RunningSound.stop();
 			return;
 		if(raycast.collider != player):
+			$RunningSound.stop();
 			return;
+		if(!$RunningSound.playing):
+			$RunningSound.play();
+			$AlertSound.play();
 		velocity += (player.position - position) * playerAttackForce * delta;
 		velocity = velocity.normalized();
 		velocity *= attackSpeed;
