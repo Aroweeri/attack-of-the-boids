@@ -115,11 +115,11 @@ position = Vector2( 616, 400 )
 rotation = 1.57079
 
 [node name="Boid2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 264, 300 )
+position = Vector2( 88, 316 )
 rotation = 1.57079
 
 [node name="Boid3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 300, 304 )
+position = Vector2( 108, 320 )
 rotation = 1.57079
 
 [node name="Boid4" parent="." instance=ExtResource( 5 )]
