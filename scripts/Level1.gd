@@ -57,7 +57,7 @@ func _on_Area2D_body_entered(body):
 	$CanvasLayer/GridContainer/hidden.text = "HIDDEN";
 	if(body == $Player):
 		$Player.set_hidden(true);
-		$CanvasLayer/Vignette.modulate.a8 = 255;
+		$CanvasLayer/Vignette.modulate.a8 = 128;
 		for boid in get_tree().get_nodes_in_group("boids"):
 			boid.get_node("BreatheSound").volume_db = -25;
 

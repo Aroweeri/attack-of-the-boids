@@ -403,7 +403,7 @@ margin_bottom = 149.0
 text = "hdor"
 
 [node name="Vignette" type="Sprite" parent="CanvasLayer"]
-modulate = Color( 0.137255, 0.423529, 0.0862745, 1 )
+modulate = Color( 0.137255, 0.423529, 0.0862745, 0.501961 )
 position = Vector2( 512, 300 )
 scale = Vector2( 0.6, 0.682 )
 texture = ExtResource( 7 )
