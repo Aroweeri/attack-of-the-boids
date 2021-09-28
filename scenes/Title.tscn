@@ -1,0 +1,191 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Title.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 212.0
+margin_top = 100.0
+margin_right = 812.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 600, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 14.0
+text = "Attack of the Boids!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 600.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Level Select" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 600.0
+margin_bottom = 160.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Level Select"]
+margin_right = 600.0
+margin_bottom = 14.0
+text = "Level Select"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/Level Select"]
+margin_top = 18.0
+margin_right = 600.0
+margin_bottom = 38.0
+columns = 6
+
+[node name="Button1" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_right = 96.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "2"
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_left = 200.0
+margin_right = 296.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "3"
+
+[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_left = 300.0
+margin_right = 396.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "4"
+
+[node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_left = 400.0
+margin_right = 496.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "5"
+
+[node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+margin_left = 500.0
+margin_right = 596.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "6"
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 600.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 218.0
+margin_right = 600.0
+margin_bottom = 238.0
+
+[node name="Control" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 164.0
+margin_right = 436.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
+margin_right = 126.0
+margin_bottom = 20.0
+size_flags_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer"]
+margin_top = 3.0
+margin_right = 22.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer"]
+margin_left = 26.0
+margin_right = 126.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+value = 100.0
+editable = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
+margin_left = 130.0
+margin_right = 272.0
+margin_bottom = 20.0
+size_flags_horizontal = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer2"]
+margin_top = 3.0
+margin_right = 38.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer2"]
+margin_left = 42.0
+margin_right = 142.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+value = 100.0
+editable = false
+
+[node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 242.0
+margin_right = 600.0
+margin_bottom = 292.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 296.0
+margin_right = 600.0
+margin_bottom = 326.0
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+margin_left = 260.0
+margin_right = 340.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+size_flags_horizontal = 0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
