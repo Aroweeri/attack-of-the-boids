@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://textures/vignette.png" type="Texture" id=1]
+
+[node name="Vignette" type="Sprite"]
+modulate = Color( 0.137255, 0.423529, 0.0862745, 1 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.6, 0.682 )
+texture = ExtResource( 1 )
