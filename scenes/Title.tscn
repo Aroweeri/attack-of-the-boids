@@ -64,11 +64,12 @@ size_flags_horizontal = 3
 text = "1"
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
+anchor_left = 0.00166667
+anchor_right = 0.00166667
 margin_left = 100.0
 margin_right = 196.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-disabled = true
 text = "2"
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
@@ -188,4 +189,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]

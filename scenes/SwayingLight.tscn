@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://textures/light.png" type="Texture" id=1]
-[ext_resource path="res://SwayingLight.gd" type="Script" id=2]
+[ext_resource path="res://scripts/SwayingLight.gd" type="Script" id=2]
 [ext_resource path="res://textures/player.png" type="Texture" id=3]
 
 [node name="Sprite" type="Sprite"]
