@@ -85,6 +85,8 @@ func align(delta):
 func attack(delta):
 	var bodies = $playerDetectionArea.get_overlapping_bodies();
 	if(bodies.size() == 1):
+		if(player.invincible):
+			return;
 		if player.is_hidden():
 			$RunningSound.stop();
 			return;
@@ -114,6 +116,7 @@ func _physics_process(delta):
 	attack(delta);
 	move_and_slide(velocity)
 	if(position.distance_to(player.position)<10):
-		emit_signal("playerkilled");
+		if(!player.invincible):
+			emit_signal("playerkilled");
 
 	rotation = velocity.angle()

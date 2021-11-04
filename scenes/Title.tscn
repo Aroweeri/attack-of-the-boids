@@ -61,15 +61,15 @@ columns = 6
 margin_right = 96.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
+disabled = true
 text = "1"
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-anchor_left = 0.00166667
-anchor_right = 0.00166667
 margin_left = 100.0
 margin_right = 196.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
+disabled = true
 text = "2"
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
