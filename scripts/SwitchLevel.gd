@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var boidScene = preload("res://scenes/Boid.tscn");
+var util = load("res://scripts/Util.gd").new();
 var numBoids = 100;
 var rng = RandomNumberGenerator.new();
 var boids = [];
@@ -52,7 +53,13 @@ func _on_SafeArea_body_exited(body):
 
 func _on_ExitArea_body_entered(body):
 	if(body == $Player):
-		get_tree().reload_current_scene();
+
+		#update unlocked levels
+		var data = util.load_data("res://data.json");
+		data["levels"]["level3"]["unlocked"] = true;
+		util.save_data(data, "res://data.json");
+		
+		get_tree().change_scene("res://scenes/Title.tscn");
 
 
 func _on_button_body_entered(body):

@@ -1,13 +1,8 @@
 extends Control
+var util = load("res://scripts/Util.gd").new();
 
 func _ready():
-	#get data from save state
-	var file = File.new();
-	file.open("res://data.json", File.READ);
-	var json_str = file.get_as_text();
-	var data = {};
-	data = parse_json(json_str);
-	file.close();
+	var data = util.load_data("res://data.json");
 	
 	if(data["levels"]["level1"]["unlocked"]):
 		$"CenterContainer/VBoxContainer/Level Select/GridContainer/Button1".disabled = false;
