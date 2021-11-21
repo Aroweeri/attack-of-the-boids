@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://textures/tiles.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/SwayingLight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://textures/button.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/SwitchLevel.gd" type="Script" id=6]
 [ext_resource path="res://scenes/Vignette.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/SafeLight.tscn" type="PackedScene" id=8]
@@ -80,13 +80,10 @@ extents = Vector2( 33.3384, 25.3051 )
 
 [sub_resource type="RectangleShape2D" id=7]
 
-[sub_resource type="CircleShape2D" id=8]
-radius = 1.25324
-
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 26.788 )
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=9]
 
 [node name="Node2D" type="YSort"]
 script = ExtResource( 6 )
@@ -237,19 +234,6 @@ position = Vector2( 696, 368 )
 position = Vector2( 864, 384 )
 rotation = 1.57079
 
-[node name="button" type="Area2D" parent="."]
-position = Vector2( 440, 196 )
-collision_layer = 0
-collision_mask = 4
-
-[node name="Sprite" type="Sprite" parent="button"]
-rotation = 1.57079
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
-shape = SubResource( 8 )
-
 [node name="Boid" parent="." instance=ExtResource( 10 )]
 position = Vector2( 518.173, 250.443 )
 
@@ -268,7 +252,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBlocker"]
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="PlayerBlocker2" type="StaticBody2D" parent="."]
 position = Vector2( 569.374, 325.407 )
@@ -277,7 +261,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBlocker2"]
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="ExitArea" type="Area2D" parent="."]
 position = Vector2( 537.904, 408.234 )
@@ -285,7 +269,10 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
-shape = SubResource( 10 )
+shape = SubResource( 9 )
+
+[node name="button" parent="." instance=ExtResource( 5 )]
+position = Vector2( 440, 184 )
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="body_entered" from="SafeArea" to="." method="_on_SafeArea_body_entered"]
@@ -296,5 +283,5 @@ shape = SubResource( 10 )
 [connection signal="body_exited" from="SafeArea3" to="." method="_on_SafeArea_body_exited"]
 [connection signal="body_entered" from="SafeArea4" to="." method="_on_SafeArea_body_entered"]
 [connection signal="body_exited" from="SafeArea4" to="." method="_on_SafeArea_body_exited"]
-[connection signal="body_entered" from="button" to="." method="_on_button_body_entered"]
 [connection signal="body_entered" from="ExitArea" to="." method="_on_ExitArea_body_entered"]
+[connection signal="body_entered" from="button" to="." method="_on_button_body_entered"]

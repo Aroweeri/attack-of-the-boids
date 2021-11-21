@@ -39,9 +39,44 @@ func playerKilled():
 	$CanvasLayer/DeathScreen.visible = true;
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.queue_free();
-	
 
-func _on_WinArea_body_entered(body):
+func _on_RestartTimer_timeout():
+	get_tree().reload_current_scene();
+	
+func activate_radar():
+	$CanvasLayer/Radar.visible = true;
+	for boid in get_tree().get_nodes_in_group("boids"):
+		boid.get_node("Sprite").material.light_mode = CanvasItemMaterial.LIGHT_MODE_NORMAL;
+	
+func deactivate_radar():
+	$CanvasLayer/Radar.visible = false;
+	for boid in get_tree().get_nodes_in_group("boids"):
+		boid.get_node("Sprite").material.light_mode = CanvasItemMaterial.LIGHT_MODE_LIGHT_ONLY;
+
+func _on_button_body_entered(body):
+	if(body.is_in_group("players")):
+		activate_radar();
+
+func _on_button_body_exited(body):
+	if(body.is_in_group("players")):
+		deactivate_radar();
+
+func _on_SafeArea_body_entered(body):
+	if(body == $Player):
+		$Player.set_hidden(true);
+		$CanvasLayer/Vignette.modulate.a8 = 255;
+		for boid in get_tree().get_nodes_in_group("boids"):
+			boid.get_node("BreatheSound").volume_db = -15;
+
+func _on_SafeArea_body_exited(body):
+	if(body == $Player):
+		$Player.set_hidden(false);
+		$CanvasLayer/Vignette.modulate.a = 0;
+		for boid in get_tree().get_nodes_in_group("boids"):
+			boid.get_node("BreatheSound").volume_db = -10;
+
+
+func _on_ExitArea_body_entered(body):
 	if(body == $Player):
 		
 		#update unlocked levels
@@ -50,6 +85,3 @@ func _on_WinArea_body_entered(body):
 		util.save_data(data, "res://data.json");
 		
 		get_tree().change_scene("res://scenes/Title.tscn");
-
-func _on_RestartTimer_timeout():
-	get_tree().reload_current_scene();
