@@ -190,4 +190,5 @@ __meta__ = {
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
