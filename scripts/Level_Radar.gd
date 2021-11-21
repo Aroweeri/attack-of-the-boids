@@ -81,7 +81,7 @@ func _on_ExitArea_body_entered(body):
 		
 		#update unlocked levels
 		var data = util.load_data("res://data.json");
-		data["levels"]["level2"]["unlocked"] = true;
+		data["levels"]["level4"]["unlocked"] = true;
 		util.save_data(data, "res://data.json");
 		
 		get_tree().change_scene("res://scenes/Title.tscn");
