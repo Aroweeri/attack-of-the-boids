@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var speed = 150
-var invincible = true;
+var invincible = false;
 
 var velocity = Vector2()
 var hidden = true;
