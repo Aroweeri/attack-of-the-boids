@@ -382,10 +382,6 @@ rotation = 1.57079
 position = Vector2( 888, 296 )
 rotation = 1.57079
 
-[node name="Door11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 552, 408 )
-rotation = 1.57079
-
 [node name="Door6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 584, 248 )
 rotation = 3.14159
