@@ -35,7 +35,6 @@ position = Vector2( 56, 420 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Vignette" type="Sprite" parent="CanvasLayer"]
-visible = false
 modulate = Color( 0.137255, 0.423529, 0.0862745, 1 )
 position = Vector2( 512, 300 )
 scale = Vector2( 0.6, 0.682 )
