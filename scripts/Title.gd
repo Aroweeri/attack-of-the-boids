@@ -1,6 +1,10 @@
 extends Control
 var util = load("res://scripts/Util.gd").new();
 
+func _process(delta):
+	if(Input.is_action_just_pressed("ui_cancel")):
+		get_tree().quit();
+
 func _ready():
 	var data = util.load_data("res://data.json");
 	
