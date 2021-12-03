@@ -7,7 +7,10 @@ var rng = RandomNumberGenerator.new();
 var boids = [];
 var buttonPressed = false;
 
-
+func _process(delta):
+	if(Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://scenes/Title.tscn");
+		
 func _ready():
 	rng.randomize();
 	var angle;
