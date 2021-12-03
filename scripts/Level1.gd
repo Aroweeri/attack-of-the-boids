@@ -27,6 +27,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if(body == $Player):
+		$CanvasLayer/Controls/GetToTheExit.visible = false;
 		$Player.set_hidden(false);
 		$CanvasLayer/Vignette.modulate.a = 0;
 		for boid in get_tree().get_nodes_in_group("boids"):
@@ -37,6 +38,7 @@ func playerKilled():
 	$Player/DeathSound.play();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;
+	$CanvasLayer/Controls.visible = false;
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.queue_free();
 	
