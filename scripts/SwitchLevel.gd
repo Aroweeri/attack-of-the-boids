@@ -27,6 +27,7 @@ func _ready():
 
 
 func playerKilled():
+	$Player.isDead = true;
 	$Player/DeathSound.play();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;

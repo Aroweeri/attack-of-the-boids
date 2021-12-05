@@ -38,6 +38,7 @@ func _on_Area2D_body_exited(body):
 
 
 func playerKilled():
+	$Player.isDead = true;
 	$Player/DeathSound.play();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;
