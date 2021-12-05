@@ -5,6 +5,7 @@ var invincible = false;
 
 var velocity = Vector2()
 var hidden = true;
+var isDead = false;
 
 func get_input():
 	velocity = Vector2()
@@ -20,6 +21,8 @@ func get_input():
 
 
 func _physics_process(_delta):
+	if(isDead):
+		return;
 	get_input()
 	velocity = move_and_slide(velocity)
 
