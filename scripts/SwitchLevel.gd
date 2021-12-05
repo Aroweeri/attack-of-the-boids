@@ -49,7 +49,7 @@ func _on_SafeArea_body_entered(body):
 
 func _on_SafeArea_body_exited(body):
 	if(body == $Player):
-		$CanvasLayer/Controls/GetToTheExit.visible = false;
+		$CanvasLayer/Controls.visible = false;
 		$Player.set_hidden(false);
 		$CanvasLayer/Vignette.modulate.a = 0;
 		for boid in get_tree().get_nodes_in_group("boids"):
