@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://textures/arrow_keys.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://textures/tiles4.png" type="Texture" id=11]
 [ext_resource path="res://textures/get_to_the_exit.png" type="Texture" id=12]
 [ext_resource path="res://textures/key.png" type="Texture" id=13]
+[ext_resource path="res://resources/bgm.ogg" type="AudioStream" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -525,6 +526,10 @@ shape = SubResource( 15 )
 
 [node name="button" parent="." instance=ExtResource( 5 )]
 position = Vector2( 440, 184 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -2.0
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="body_entered" from="SafeArea" to="." method="_on_SafeArea_body_entered"]

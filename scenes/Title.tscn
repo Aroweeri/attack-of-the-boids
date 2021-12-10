@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Title.gd" type="Script" id=1]
+[ext_resource path="res://resources/title_song_amplified.ogg" type="AudioStream" id=2]
 
 [node name="Control" type="Control"]
 script = ExtResource( 1 )
@@ -187,6 +188,10 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -1.578
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button2" to="." method="_on_Button2_pressed"]

@@ -6,6 +6,7 @@ func _process(delta):
 		get_tree().quit();
 
 func _ready():
+	$music.play();
 	var data = util.load_data("res://data.json");
 	
 	if(data["levels"]["level1"]["unlocked"]):

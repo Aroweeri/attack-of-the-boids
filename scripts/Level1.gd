@@ -17,6 +17,8 @@ func _ready():
 	var x;
 	var y;
 	
+	$Music.play();
+	
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
 
@@ -40,6 +42,7 @@ func _on_Area2D_body_exited(body):
 func playerKilled():
 	$Player.isDead = true;
 	$Player/DeathSound.play();
+	$Music.stop();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;
 	$CanvasLayer/Controls.visible = false;
