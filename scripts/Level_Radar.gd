@@ -20,12 +20,15 @@ func _ready():
 	#this level needs to be more zoomed out than others
 	$Player/Camera2D.zoom = Vector2(0.8,0.8);
 	
+	$Music.play();
+	
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
 		
 func playerKilled():
 	$Player.isDead = true;
 	$Player/DeathSound.play();
+	$Music.stop();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;
 	$CanvasLayer/Controls.visible = false;

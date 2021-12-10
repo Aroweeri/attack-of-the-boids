@@ -18,6 +18,8 @@ func _ready():
 	var x;
 	var y;
 	
+	$Music.play();
+	
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
 		boid.cohesionForce = 0;
@@ -29,6 +31,7 @@ func _ready():
 func playerKilled():
 	$Player.isDead = true;
 	$Player/DeathSound.play();
+	$Music.stop();
 	$RestartTimer.start();
 	$CanvasLayer/DeathScreen.visible = true;
 	$CanvasLayer/Controls.visible = false;
