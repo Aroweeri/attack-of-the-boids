@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Title.gd" type="Script" id=1]
 [ext_resource path="res://resources/title_song_amplified.ogg" type="AudioStream" id=2]
+[ext_resource path="res://resources/alert_short.wav" type="AudioStream" id=3]
 
 [node name="Control" type="Control"]
 script = ExtResource( 1 )
@@ -123,7 +124,7 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
+[node name="SFXHBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
 margin_right = 126.0
 margin_bottom = 20.0
 size_flags_horizontal = 2
@@ -131,41 +132,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/SFXHBox"]
 margin_top = 3.0
 margin_right = 22.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer"]
+[node name="Slider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/SFXHBox"]
 margin_left = 26.0
 margin_right = 126.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
-value = 100.0
-editable = false
+max_value = 1.0
+step = 0.05
+value = 1.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
+[node name="MusicHBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/Control"]
 margin_left = 130.0
 margin_right = 272.0
 margin_bottom = 20.0
 size_flags_horizontal = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer2"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/Control/MusicHBox"]
 margin_top = 3.0
 margin_right = 38.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/HBoxContainer2"]
+[node name="Slider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer/Control/MusicHBox"]
 margin_left = 42.0
 margin_right = 142.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
-value = 100.0
-editable = false
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer"]
 margin_top = 242.0
@@ -191,9 +194,14 @@ __meta__ = {
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -1.578
+bus = "Music"
+
+[node name="SFXTest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/CenterContainer/Control/MusicHBox/Slider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]

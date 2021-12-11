@@ -58,12 +58,15 @@ shape = SubResource( 3 )
 [node name="RunningSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = 5.0
+bus = "SFX"
 
 [node name="AlertSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+bus = "SFX"
 
 [node name="BreatheSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = -25.0
 max_distance = 880.0
 attenuation = 8.87652
+bus = "SFX"

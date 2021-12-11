@@ -16,11 +16,10 @@ func _ready():
 	var radius;
 	var x;
 	var y;
-	
-	$Music.play();
-	
+
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
+	$Music.play();
 
 func _on_Area2D_body_entered(body):
 	if(body == $Player):
