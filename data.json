@@ -1,28 +1,19 @@
 {
 	"levels": {
-		"level1":{
+		"level1": {
 			"unlocked": true
 		},
-		"level2":{
+		"level2": {
 			"unlocked": false
 		},
-		"level3":{
-			"unlocked": false
-		},
-		"level4":{
-			"unlocked": false
-		},
-		"level5":{
-			"unlocked": false
-		},
-		"level6":{
+		"level3": {
 			"unlocked": false
 		}
 	},
 	"music": {
-		"percent": 100
+		"value": 1
 	},
-	"bgm": {
-		"percent": 100
+	"sfx": {
+		"value": 1
 	}
 }

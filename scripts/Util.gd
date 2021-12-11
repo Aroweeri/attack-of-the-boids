@@ -1,7 +1,7 @@
 extends Node
 
 func save_data(data, path):
-	var json_str = to_json(data);
+	var json_str = JSON.print(data, "\t");
 	var file = File.new();
 	file.open(path, File.WRITE);
 	file.store_line(json_str);

@@ -26,3 +26,4 @@ zoom = Vector2( 0.6, 0.6 )
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "SFX"

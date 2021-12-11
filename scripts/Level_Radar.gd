@@ -19,12 +19,12 @@ func _ready():
 	
 	#this level needs to be more zoomed out than others
 	$Player/Camera2D.zoom = Vector2(0.8,0.8);
-	
-	$Music.play();
-	
+
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
-		
+
+	$Music.play();
+
 func playerKilled():
 	$Player.isDead = true;
 	$Player/DeathSound.play();
@@ -74,10 +74,5 @@ func _on_SafeArea_body_exited(body):
 
 func _on_ExitArea_body_entered(body):
 	if(body == $Player):
-		
-		#update unlocked levels
-		var data = util.load_data("res://data.json");
-		data["levels"]["level4"]["unlocked"] = true;
-		util.save_data(data, "res://data.json");
 		
 		get_tree().change_scene("res://scenes/Title.tscn");

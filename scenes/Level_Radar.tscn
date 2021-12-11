@@ -230,6 +230,7 @@ shape = SubResource( 2 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 volume_db = -2.0
+bus = "Music"
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="body_entered" from="button" to="." method="_on_button_body_entered"]

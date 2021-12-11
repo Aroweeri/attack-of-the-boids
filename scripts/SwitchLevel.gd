@@ -17,15 +17,15 @@ func _ready():
 	var radius;
 	var x;
 	var y;
-	
-	$Music.play();
-	
+
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
 		boid.cohesionForce = 0;
 		boid.alignForce = 0;
 		boid.separationForce = 4;
 		boid.get_node("BreatheSound").playing = false;
+
+	$Music.play();
 
 
 func playerKilled():
