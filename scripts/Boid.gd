@@ -109,7 +109,7 @@ func _physics_process(delta):
 
 	spaceState = get_world_2d().direct_space_state
 
-	cohesion(delta);
+	#cohesion(delta);
 	separation(delta);
 	align(delta);
 	avoid_collision(delta);

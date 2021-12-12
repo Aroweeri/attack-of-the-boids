@@ -18,7 +18,7 @@ func _ready():
 	var y;
 	
 	#this level needs to be more zoomed out than others
-	$Player/Camera2D.zoom = Vector2(0.8,0.8);
+	$Player/Camera2D.zoom = Vector2(0.9,0.9);
 
 	for boid in get_tree().get_nodes_in_group("boids"):
 		boid.connect("playerkilled", self, "playerKilled");
