@@ -57,54 +57,30 @@ align = 1
 margin_top = 18.0
 margin_right = 600.0
 margin_bottom = 38.0
-columns = 6
+columns = 3
 
 [node name="Button1" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_right = 96.0
+margin_right = 197.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 disabled = true
 text = "1"
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_left = 100.0
-margin_right = 196.0
+margin_left = 201.0
+margin_right = 398.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 disabled = true
 text = "2"
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_left = 200.0
-margin_right = 296.0
+margin_left = 402.0
+margin_right = 599.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 disabled = true
 text = "3"
-
-[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_left = 300.0
-margin_right = 396.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-disabled = true
-text = "4"
-
-[node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_left = 400.0
-margin_right = 496.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-disabled = true
-text = "5"
-
-[node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/Level Select/GridContainer"]
-margin_left = 500.0
-margin_right = 596.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-disabled = true
-text = "6"
 
 [node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
 margin_top = 164.0
