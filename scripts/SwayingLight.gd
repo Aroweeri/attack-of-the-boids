@@ -1,4 +1,4 @@
-extends Light2D
+extends Node2D
 
 var posSwayAmount = 7;
 var intensityMin = 1.8;
@@ -18,8 +18,8 @@ func _ready():
 	targetPos = newTargetPosition(posSwayAmount, origin);
 	
 func _physics_process(delta):
-	energy = lerp(energy,targetEnergy,delta*3)
-	if(abs(energy-targetEnergy) < 0.1):
+	$Light2D.energy = lerp($Light2D.energy,targetEnergy,delta*3)
+	if(abs($Light2D.energy-targetEnergy) < 0.1):
 		targetEnergy = rng.randf_range(intensityMin, intensityMax);
 	position = lerp(position, targetPos, delta*5);
 	if(position.distance_to(targetPos)<1):
