@@ -1,6 +1,6 @@
 extends Node2D
 
-var posSwayAmount = 7;
+var posSwayAmount = 4;
 var intensityMin = 1.8;
 var intensityMax = 2.2;
 
