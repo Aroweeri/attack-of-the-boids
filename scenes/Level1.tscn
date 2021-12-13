@@ -42,14 +42,6 @@ rotation = 1.57079
 position = Vector2( 608, 560 )
 rotation = 1.57079
 
-[node name="Boid6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 501.386, 414.198 )
-rotation = 1.57079
-
-[node name="Boid7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 483.406, 412.7 )
-rotation = 1.57079
-
 [node name="TileMap2" type="TileMap" parent="."]
 z_index = -1
 tile_set = ExtResource( 10 )
