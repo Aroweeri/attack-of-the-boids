@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Title.gd" type="Script" id=1]
 [ext_resource path="res://resources/title_song_amplified.ogg" type="AudioStream" id=2]
 [ext_resource path="res://resources/alert_short.wav" type="AudioStream" id=3]
+[ext_resource path="res://art.jpg" type="Texture" id=4]
 
 [node name="Control" type="Control"]
 script = ExtResource( 1 )
@@ -11,41 +12,26 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_top = 320.0
+margin_right = 946.0
+margin_bottom = 753.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 212.0
-margin_top = 100.0
-margin_right = 812.0
-margin_bottom = 500.0
+margin_left = 173.0
+margin_top = 16.0
+margin_right = 773.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 600, 400 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 600.0
-margin_bottom = 14.0
-text = "Boids in the Dark"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 600.0
-margin_bottom = 118.0
-rect_min_size = Vector2( 0, 100 )
-
 [node name="Level Select" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 122.0
 margin_right = 600.0
-margin_bottom = 160.0
+margin_bottom = 38.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Level Select"]
 margin_right = 600.0
@@ -83,15 +69,15 @@ disabled = true
 text = "3"
 
 [node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 164.0
+margin_top = 42.0
 margin_right = 600.0
-margin_bottom = 214.0
+margin_bottom = 92.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 218.0
+margin_top = 96.0
 margin_right = 600.0
-margin_bottom = 238.0
+margin_bottom = 116.0
 
 [node name="Control" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
 margin_left = 164.0
@@ -147,15 +133,15 @@ step = 0.05
 value = 1.0
 
 [node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 242.0
+margin_top = 120.0
 margin_right = 600.0
-margin_bottom = 292.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 296.0
+margin_top = 174.0
 margin_right = 600.0
-margin_bottom = 326.0
+margin_bottom = 204.0
 
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 260.0
@@ -175,6 +161,26 @@ bus = "Music"
 [node name="SFXTest" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "SFX"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.302012, 0.302012 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.556863 )
+show_behind_parent = true
+margin_left = 161.0
+margin_top = 324.0
+margin_right = 785.0
+margin_bottom = 557.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Level Select/GridContainer/Button2" to="." method="_on_Button2_pressed"]
