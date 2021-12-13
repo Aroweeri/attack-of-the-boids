@@ -166,7 +166,7 @@ bus = "SFX"
 show_behind_parent = true
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.302012, 0.302012 )
+rect_scale = Vector2( 0.946151, 0.946151 )
 mouse_filter = 2
 texture = ExtResource( 4 )
 
